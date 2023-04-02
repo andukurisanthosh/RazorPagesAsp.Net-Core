@@ -1,0 +1,41 @@
+﻿@page
+@model AbbyWeb.Pages.Categories.DeleteModel
+@{
+}
+
+
+<form method="post">
+    <input asp-for="Category.id" hidden></input>
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary pl-3">Delete Category</h2>
+            <hr />
+        </div>
+        
+        <div class="mb-3">
+            <label asp-for="Category.FirstName"></label>
+            <input asp-for="@Model.Category.FirstName" disabled class="form-control" />
+            <span asp-validation-for="@Model.Category.FirstName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.LastName"></label>
+            <input asp-for="@Model.Category.LastName" disabled class="form-control" />
+            <span asp-validation-for="@Model.Category.LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Category.DisplayOrder"></label>
+            <input asp-for="@Model.Category.DisplayOrder" disabled class="form-control" />
+            <span asp-validation-for="@Model.Category.DisplayOrder" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-danger" style="width:150px;">Delete</button>
+        <a asp-page="Index" class="btn btn-secondary" style="width:150px;">Back</a>
+    </div>
+</form>
+
+
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
